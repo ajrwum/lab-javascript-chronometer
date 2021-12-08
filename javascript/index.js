@@ -16,6 +16,8 @@ const splitsElement = document.getElementById('splits');
 function printTime() {
   printMinutes();
   printSeconds();
+  // adding display of hundredths
+  printMilliseconds();
 }
 
 function printMinutes() {
@@ -36,7 +38,11 @@ function printSeconds() {
 
 // ==> BONUS
 function printMilliseconds() {
-  // ... your code goes here
+  // getting hundredths of a second into a string
+  const hundredths = chronometer.computeTwoDigitNumber(chronometer.getHundredths());
+  // setting textContent
+  milDecElement.textContent = hundredths[0];
+  milUniElement.textContent = hundredths[1];
 }
 
 function printSplit() {
